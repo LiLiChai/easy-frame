@@ -16,7 +16,8 @@ public final class ReflectionUtil {
     /**
      * 创建实例
      */
-    public static Object newInstance(Class<?> cls) {
+    @SuppressWarnings("deprecation")
+	public static Object newInstance(Class<?> cls) {
         Object instance;
         try {
             instance = cls.newInstance();

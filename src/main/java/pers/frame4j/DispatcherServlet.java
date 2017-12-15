@@ -37,7 +37,8 @@ public class DispatcherServlet extends HttpServlet {
 
 	@Override
     public void init(ServletConfig servletConfig) throws ServletException {
-        HelperLoader.init();
+        
+		HelperLoader.init();
 
         ServletContext servletContext = servletConfig.getServletContext();
 

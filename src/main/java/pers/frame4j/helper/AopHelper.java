@@ -68,7 +68,7 @@ public final class AopHelper {
             targetClassSet.addAll(ClassHelper.getClassSetByAnnotation(annotation));
         }
         return targetClassSet;
-    }
+    } 
 
     private static Map<Class<?>, List<Proxy>> createTargetMap(Map<Class<?>, Set<Class<?>>> proxyMap) throws Exception {
         Map<Class<?>, List<Proxy>> targetMap = new HashMap<Class<?>, List<Proxy>>();
@@ -76,7 +76,8 @@ public final class AopHelper {
             Class<?> proxyClass = proxyEntry.getKey();
             Set<Class<?>> targetClassSet = proxyEntry.getValue();
             for (Class<?> targetClass : targetClassSet) {
-                Proxy proxy = (Proxy) proxyClass.newInstance();
+                @SuppressWarnings("deprecation")
+				Proxy proxy = (Proxy) proxyClass.newInstance();
                 if (targetMap.containsKey(targetClass)) {
                     targetMap.get(targetClass).add(proxy);
                 } else {

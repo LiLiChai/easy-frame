@@ -8,9 +8,6 @@ import net.sf.cglib.proxy.MethodProxy;
 
 /**
  * 代理管理器
- *
- * @author huangyong
- * @since 1.0.0
  */
 public class ProxyManager {
 
