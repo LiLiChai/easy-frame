@@ -6,7 +6,10 @@ package pers.frame4j.security.exception;
  */
 public class AuthzException extends RuntimeException {
 
-    public AuthzException() {
+   
+	private static final long serialVersionUID = -8372964793084743738L;
+
+	public AuthzException() {
         super();
     }
 

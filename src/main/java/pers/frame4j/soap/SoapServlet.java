@@ -18,7 +18,10 @@ import pers.frame4j.util.StringUtil;
 @WebServlet(urlPatterns = SoapConstant.SERVLET_URL, loadOnStartup = 0)
 public class SoapServlet extends CXFNonSpringServlet {
 
-    @Override
+    
+	private static final long serialVersionUID = -659520217992429055L;
+
+	@Override
     protected void loadBus(ServletConfig sc) {
         // 初始化 CXF 总线
         super.loadBus(sc);

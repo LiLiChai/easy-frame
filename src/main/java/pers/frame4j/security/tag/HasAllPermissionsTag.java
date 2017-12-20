@@ -8,7 +8,8 @@ import org.apache.shiro.web.tags.PermissionTag;
  */
 public class HasAllPermissionsTag extends PermissionTag {
 
-    private static final String PERMISSION_NAMES_DELIMITER = ",";
+	private static final long serialVersionUID = 1L;
+	private static final String PERMISSION_NAMES_DELIMITER = ",";
 
     @Override
     protected boolean showTagBody(String permNames) {

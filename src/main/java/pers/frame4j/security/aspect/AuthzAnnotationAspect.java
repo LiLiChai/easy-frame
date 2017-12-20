@@ -25,7 +25,8 @@ public class AuthzAnnotationAspect extends AspectProxy {
     /**
      * 定义一个基于授权功能的注解类数组
      */
-    private static final Class[] ANNOTATION_CLASS_ARRAY = {
+    @SuppressWarnings("rawtypes")
+	private static final Class[] ANNOTATION_CLASS_ARRAY = {
         Authenticated.class, User.class, Guest.class, HasRoles.class, HasPermissions.class
     };
 

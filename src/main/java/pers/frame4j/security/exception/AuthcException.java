@@ -5,7 +5,10 @@ package pers.frame4j.security.exception;
  */
 public class AuthcException extends Exception {
 
-    public AuthcException() {
+    
+	private static final long serialVersionUID = 984237275300329473L;
+
+	public AuthcException() {
         super();
     }
 

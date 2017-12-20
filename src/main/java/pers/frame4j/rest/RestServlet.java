@@ -17,7 +17,9 @@ import pers.frame4j.util.StringUtil;
 @WebServlet(urlPatterns = RestConstant.SERVLET_URL, loadOnStartup = 0)
 public class RestServlet extends CXFNonSpringServlet {
 
-    @Override
+	private static final long serialVersionUID = 1L;
+
+	@Override
     protected void loadBus(ServletConfig sc) {
         // 初始化 CXF 总线
         super.loadBus(sc);

@@ -9,7 +9,9 @@ import org.apache.shiro.web.tags.RoleTag;
  */
 public class HasAllRolesTag extends RoleTag {
 
-    private static final String ROLE_NAMES_DELIMITER = ",";
+    
+	private static final long serialVersionUID = 2680519348774103802L;
+	private static final String ROLE_NAMES_DELIMITER = ",";
 
     @Override
     protected boolean showTagBody(String roleNames) {

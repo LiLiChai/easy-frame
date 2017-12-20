@@ -20,9 +20,6 @@ import org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter;
 
 /**
  * REST 助手类
- *
- * @author huangyong
- * @since 1.0.0
  */
 public class RestHelper {
 
