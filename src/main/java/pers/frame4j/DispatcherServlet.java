@@ -70,7 +70,7 @@ public class DispatcherServlet extends HttpServlet {
 
                 Param param;
                 if (UploadHelper.isMultipart(request)) {
-                    param = UploadHelper.createParam(request);
+                    param = UploadHelper.createParam(request);  
                 } else {
                     param = RequestHelper.createParam(request);
                 }
@@ -104,6 +104,7 @@ public class DispatcherServlet extends HttpServlet {
                 for (Map.Entry<String, Object> entry : model.entrySet()) {
                     request.setAttribute(entry.getKey(), entry.getValue());
                 }
+                System.out.println(ConfigHelper.getAppJspPath() + path);
                 request.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(request, response);
             }
         }

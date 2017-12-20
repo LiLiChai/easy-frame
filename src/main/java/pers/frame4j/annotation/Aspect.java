@@ -13,8 +13,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Aspect {
 
-    /**
-     * 注解
-     */
     Class<? extends Annotation> value();
 }

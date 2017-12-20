@@ -1,21 +1,17 @@
 package pers.frame4j.bean;
 
-/**
- * 返回数据对象
- *
+/*
+ * json封装
  */
 public class Data {
 
-    /**
-     * 模型数据
-     */
-    private Object model;
+	private Object model;
 
-    public Data(Object model) {
-        this.model = model;
-    }
+	public Data(Object model) {
+		this.model = model;
+	}
 
-    public Object getModel() {
-        return model;
-    }
+	public Object getModel() {
+		return model;
+	}
 }

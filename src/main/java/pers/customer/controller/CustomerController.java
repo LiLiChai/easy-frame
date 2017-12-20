@@ -20,25 +20,43 @@ public class CustomerController {
     @Inject
     private CustomerService customerService;
 
-    /**
-     * 进入 客户列表 界面
-     */
     @Action("get:/customer")
-    public View index(Param param) {
+    public Data index(Param param) {
         List<Customer> customerList = customerService.getCustomerList();
-        return new View("customer.jsp").addModel("customerList", customerList);
+        return new Data(customerList);
     }
 
-    /**
-     * 显示客户基本信息
-     */
     @Action("get:/customer_show")
     public View show(Param param) {
         long id = param.getLong("id");
         Customer customer = customerService.getCustomer(id);
         return new View("customer_show.jsp").addModel("customer", customer);
     }
-
+    
+    @Action("get:/customer_show2")
+    public Data show2(Param param) {
+    	long id = param.getLong("id");
+    	Customer customer = customerService.getCustomer(id);
+    	return new Data(customer);
+    }
+    
+    @Action("post:/test")
+    public View test(Param param) {
+    	System.out.println("hello test2222");
+    	return new View ("test.html");
+    }
+    
+    @Action("get:/test2")
+    public View test2(Param param) {
+    	System.out.println("hello test");
+    	return new View ("test.html");
+    }
+    
+    @Action("put:/test3")
+    public View test3(Param param) {
+    	System.out.println("hello test3");
+    	return new View("test.html");
+    }
     /**
      * 进入 创建客户 界面
      */
