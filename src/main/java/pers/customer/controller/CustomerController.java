@@ -2,6 +2,11 @@ package pers.customer.controller;
 
 import java.util.List;
 import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import pers.customer.aspect.ControllerAspect;
 import pers.customer.model.Customer;
 import pers.customer.service.CustomerService;
 import pers.frame4j.annotation.Action;
@@ -19,7 +24,6 @@ public class CustomerController {
 
     @Inject
     private CustomerService customerService;
-
     @Action("get:/customer")
     public Data index(Param param) {
         List<Customer> customerList = customerService.getCustomerList();
@@ -48,8 +52,8 @@ public class CustomerController {
     
     @Action("get:/test2")
     public View test2(Param param) {
-    	System.out.println("hello test");
-    	return new View ("test.html");
+    	System.out.println("hello test2222222222222222");
+    	return new View ("index.html");
     }
     
     @Action("put:/test3")

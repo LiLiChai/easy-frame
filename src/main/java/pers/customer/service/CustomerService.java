@@ -2,6 +2,9 @@ package pers.customer.service;
 
 import java.util.List;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import pers.customer.model.Customer;
 import pers.frame4j.annotation.Service;
 import pers.frame4j.helper.DatabaseHelper;
@@ -15,8 +18,10 @@ public class CustomerService {
     /**
      * 获取客户列表
      */
+	private static final Logger logger = LoggerFactory.getLogger(CustomerService.class);
     public List<Customer> getCustomerList() {
         String sql = "SELECT * FROM customer";
+        logger.info(sql);
         return DatabaseHelper.queryEntityList(Customer.class, sql);
     }
 
