@@ -6,7 +6,7 @@ import java.util.Set;
 import pers.frame4j.util.ReflectionUtil;
 
 /**
- * Bean 助手类
+ * Bean helper
  *
  */
 public final class BeanHelper {

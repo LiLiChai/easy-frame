@@ -7,7 +7,7 @@ import pers.frame4j.annotation.Transaction;
 import pers.frame4j.helper.DatabaseHelper;
 
 /**
- * 事务代理
+ * transaction proxy
  */
 public class TransactionProxy implements Proxy {
 

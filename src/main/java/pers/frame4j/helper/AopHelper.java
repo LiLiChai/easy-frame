@@ -17,7 +17,7 @@ import pers.frame4j.proxy.ProxyManager;
 import pers.frame4j.proxy.TransactionProxy;
 
 /**
- * 方法拦截助手类
+ * method intercept
  */
 public final class AopHelper {
 

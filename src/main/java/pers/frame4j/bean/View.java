@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 返回entity
+ * return entity
  */
 public class View {
 

@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Servlet 助手类
+ * Servlet helper
  *
  */
 public final class ServletHelper {

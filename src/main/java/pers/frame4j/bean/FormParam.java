@@ -1,8 +1,7 @@
 package pers.frame4j.bean;
 
 /**
- * 封装表单参数
- *
+ * form param encupsulation
  */
 public class FormParam {
 

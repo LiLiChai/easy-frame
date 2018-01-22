@@ -7,7 +7,7 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
 /**
- * 代理管理器
+ * proxy manager
  */
 public class ProxyManager {
 

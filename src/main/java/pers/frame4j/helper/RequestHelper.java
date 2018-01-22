@@ -13,7 +13,7 @@ import pers.frame4j.util.StreamUtil;
 import pers.frame4j.util.StringUtil;
 
 /**
- * 请求助手类
+ * request helper
  */
 public final class RequestHelper {
 

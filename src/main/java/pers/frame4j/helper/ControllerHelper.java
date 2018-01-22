@@ -11,7 +11,7 @@ import pers.frame4j.util.ArrayUtil;
 import pers.frame4j.util.CollectionUtil;
 
 /**
- * 控制器助手类
+ * controller helper
  *
  */
 public final class ControllerHelper {

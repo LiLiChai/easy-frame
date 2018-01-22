@@ -9,7 +9,7 @@ import pers.frame4j.util.CollectionUtil;
 import pers.frame4j.util.StringUtil;
 
 /**
- * 请求参数对象
+ * request param object
  */
 public class Param {
 
@@ -27,7 +27,7 @@ public class Param {
     }
 
     /**
-     * 获取请求参数映射
+     * get request param mapper
      */
     public Map<String, Object> getFieldMap() {
         Map<String, Object> fieldMap = new HashMap<String, Object>();
@@ -45,7 +45,7 @@ public class Param {
     }
 
     /**
-     * 获取上传文件映射
+     * get file upload mapper
      */
     public Map<String, List<FileParam>> getFileMap() {
         Map<String, List<FileParam>> fileMap = new HashMap<String, List<FileParam>>();
@@ -66,14 +66,14 @@ public class Param {
     }
 
     /**
-     * 获取所有上传文件
+     * get all upload file
      */
     public List<FileParam> getFileList(String fieldName) {
         return getFileMap().get(fieldName);
     }
 
     /**
-     * 获取唯一上传文件
+     * get single upload file
      */
     public FileParam getFile(String fieldName) {
         List<FileParam> fileParamList = getFileList(fieldName);
@@ -84,7 +84,7 @@ public class Param {
     }
 
     /**
-     * 验证参数是否为空
+     * validate param is null
      */
     public boolean isEmpty() {
         return CollectionUtil.isEmpty(formParamList) && CollectionUtil.isEmpty(fileParamList);

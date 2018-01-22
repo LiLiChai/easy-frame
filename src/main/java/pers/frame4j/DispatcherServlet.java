@@ -27,7 +27,7 @@ import pers.frame4j.util.ReflectionUtil;
 import pers.frame4j.util.StringUtil;
 
 /**
- * 请求转发器
+ * request dispatcher
  */
 @WebServlet(urlPatterns = "/*", loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {

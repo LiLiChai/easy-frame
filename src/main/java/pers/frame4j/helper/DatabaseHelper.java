@@ -28,7 +28,7 @@ import pers.frame4j.util.ClassUtil;
 import pers.frame4j.util.CollectionUtil;
 
 /**
- * 数据库操作助手类
+ * database helper
  */
 public final class DatabaseHelper {
 

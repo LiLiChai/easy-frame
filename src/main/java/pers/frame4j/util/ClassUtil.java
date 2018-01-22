@@ -12,23 +12,14 @@ import java.util.jar.JarFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * 类操作工具类
- */
 public final class ClassUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ClassUtil.class);
 
-    /**
-     * 获取类加载器
-     */
     public static ClassLoader getClassLoader() {
         return Thread.currentThread().getContextClassLoader();
     }
 
-    /**
-     * 加载类
-     */
     public static Class<?> loadClass(String className, boolean isInitialized) {
         Class<?> cls;
         try {
@@ -40,15 +31,12 @@ public final class ClassUtil {
         return cls;
     }
 
-    /**
-     * 加载类（默认将初始化类）
-     */
     public static Class<?> loadClass(String className) {
         return loadClass(className, true);
     }
 
     /**
-     * 获取指定包名下的所有类
+     * get all class of package
      */
     public static Set<Class<?>> getClassSet(String packageName) {
         Set<Class<?>> classSet = new HashSet<Class<?>>();

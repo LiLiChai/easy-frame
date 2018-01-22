@@ -3,18 +3,17 @@ package pers.frame4j.bean;
 import java.lang.reflect.Method;
 
 /**
- * 封装 Action 信息
- *
+ * Action encapsulation
  */
 public class Handler {
 
     /**
-     * Controller 类
+     * Controller 
      */
     private Class<?> controllerClass;
 
     /**
-     * Action 方法
+     * Action 
      */
     private Method actionMethod;
 

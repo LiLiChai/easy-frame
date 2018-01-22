@@ -1,7 +1,7 @@
 package pers.frame4j;
 
 /**
- * 提供相关配置项常量
+ * provide config constant
  */
 public interface ConfigConstant {
 

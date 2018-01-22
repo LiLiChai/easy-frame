@@ -1,7 +1,7 @@
 package pers.frame4j.bean;
 
 /*
- * json封装
+ * json encapsulation
  */
 public class Data {
 

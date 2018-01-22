@@ -3,9 +3,9 @@ package pers.frame4j.bean;
 import java.io.InputStream;
 
 /**
- * 封装上传文件参数
- *
+ * file uploat encapsulation
  */
+
 public class FileParam {
 
     private String fieldName;

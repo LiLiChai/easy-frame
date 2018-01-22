@@ -8,7 +8,7 @@ import pers.frame4j.annotation.Service;
 import pers.frame4j.util.ClassUtil;
 
 /**
- * 类操作助手类
+ * class helper
  */
 public final class ClassHelper {
 

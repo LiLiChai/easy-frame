@@ -8,7 +8,7 @@ import pers.frame4j.util.CollectionUtil;
 import pers.frame4j.util.ReflectionUtil;
 
 /**
- * 依赖注入助手类
+ * IOC helper
  */
 public final class IocHelper {
 

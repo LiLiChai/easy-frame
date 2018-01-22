@@ -27,7 +27,7 @@ import pers.frame4j.util.StreamUtil;
 import pers.frame4j.util.StringUtil;
 
 /**
- * 文件上传助手类
+ * upload file helper
  */
 public final class UploadHelper {
 

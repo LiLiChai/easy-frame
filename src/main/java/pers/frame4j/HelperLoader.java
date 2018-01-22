@@ -8,8 +8,7 @@ import pers.frame4j.helper.IocHelper;
 import pers.frame4j.util.ClassUtil;
 
 /**
- * 加载相应的 Helper 类
- *
+ * load relative helper
  */
 public final class HelperLoader {
 
@@ -18,7 +17,7 @@ public final class HelperLoader {
             ClassHelper.class,
             BeanHelper.class,
             AopHelper.class,
-            IocHelper.class,
+            IocHelper.class,					
             ControllerHelper.class
         };
         for (Class<?> cls : classList) {
