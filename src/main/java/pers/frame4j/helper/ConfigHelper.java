@@ -1,7 +1,8 @@
 package pers.frame4j.helper;
 
 import java.util.Properties;
-import pers.frame4j.ConfigConstant;
+
+import pers.frame4j.common.ConfigConstant;
 import pers.frame4j.util.PropertiesUtil;
 
 /**

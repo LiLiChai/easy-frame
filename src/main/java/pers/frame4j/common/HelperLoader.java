@@ -1,4 +1,4 @@
-package pers.frame4j;
+package pers.frame4j.common;
 
 import pers.frame4j.helper.AopHelper;
 import pers.frame4j.helper.BeanHelper;

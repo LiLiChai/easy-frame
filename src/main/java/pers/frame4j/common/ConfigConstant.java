@@ -1,4 +1,4 @@
-package pers.frame4j;
+package pers.frame4j.common;
 
 /**
  * provide config constant
