@@ -76,8 +76,7 @@ public final class AopHelper {
             Class<?> proxyClass = proxyEntry.getKey();
             Set<Class<?>> targetClassSet = proxyEntry.getValue();
             for (Class<?> targetClass : targetClassSet) {
-                @SuppressWarnings("deprecation")
-				Proxy proxy = (Proxy) proxyClass.newInstance();
+                Proxy proxy = (Proxy) proxyClass.newInstance();
                 if (targetMap.containsKey(targetClass)) {
                     targetMap.get(targetClass).add(proxy);
                 } else {

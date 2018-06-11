@@ -1,4 +1,4 @@
-package pers.frame4j.main;
+package pers.frame4j;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -28,7 +28,7 @@ import pers.frame4j.util.ReflectionUtil;
 import pers.frame4j.util.StringUtil;
 
 /**
- * request dispatcher
+ * author : lh 2018-06-11 NT
  */
 @WebServlet(urlPatterns = "/*", loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {
