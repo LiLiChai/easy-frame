@@ -1,5 +1,6 @@
 package pers.frame4j.test;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,5 +18,10 @@ public class LogTest {
         logger.error("jjj");
         logger.warn("dsfasd");
         
+    }
+    
+    @Test
+    public void test() {
+    	System.out.println("hello junit");
     }
 }

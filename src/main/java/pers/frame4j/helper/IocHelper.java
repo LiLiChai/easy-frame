@@ -8,7 +8,7 @@ import pers.frame4j.util.CollectionUtil;
 import pers.frame4j.util.ReflectionUtil;
 
 /**
- * IOC helper
+ * IOC helper 反射与工厂模式
  */
 public final class IocHelper {
 

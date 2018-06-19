@@ -6,7 +6,7 @@ import java.util.List;
 import net.sf.cglib.proxy.MethodProxy;
 
 /**
- * proxy chain
+ * 
  */
 public class ProxyChain {
 

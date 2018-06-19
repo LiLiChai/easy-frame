@@ -9,7 +9,6 @@ import pers.frame4j.proxy.AspectProxy;
 import pers.frame4j.annotation.Controller;
 
 
-
 @Aspect(Controller.class)
 public class ControllerAspect extends AspectProxy {
 

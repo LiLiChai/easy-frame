@@ -29,7 +29,7 @@ public final class ReflectionUtil {
 	public static Object invokeMethod(Object obj, Method method, Object... args) {
 		Object result;
 		try {
-			method.setAccessible(true);
+			method.setAccessible(true);//对private变量的获取
 			result = method.invoke(obj, args);
 		} catch (Exception e) {
 			LOGGER.error("invoke method failure", e);

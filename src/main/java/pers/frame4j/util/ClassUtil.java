@@ -36,7 +36,7 @@ public final class ClassUtil {
     }
 
     /**
-     * get all class of package
+     * 得到指定包下所有的Class 18-06-19
      */
     public static Set<Class<?>> getClassSet(String packageName) {
         Set<Class<?>> classSet = new HashSet<Class<?>>();
@@ -47,7 +47,7 @@ public final class ClassUtil {
                 if (url != null) {
                     String protocol = url.getProtocol();
                     if (protocol.equals("file")) {
-                        String packagePath = url.getPath().replaceAll("%20", " ");
+                        String packagePath = url.getPath().replaceAll("%20", " ");//空格序列化后就是%20
                         addClass(classSet, packagePath, packageName);
                     } else if (protocol.equals("jar")) {
                         JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();
