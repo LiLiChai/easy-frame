@@ -51,8 +51,8 @@ public final class AopHelper {
 	/*
 	 * 获取所有Controller.class
 	 */
-	private static Set<Class<?>> createTargetClassSet(Aspect aspect) throws Exception {
-		Set<Class<?>> targetClassSet = new HashSet<Class<?>>();
+	private static Set<Class<?>> createTargetClassSet(Aspect aspect) {
+		Set<Class<?>> targetClassSet = new HashSet<>();
 		Class<? extends Annotation> annotation = aspect.value();
 		if (annotation != null && !annotation.equals(Aspect.class)) {
 			targetClassSet.addAll(ClassHelper.getClassSetByAnnotation(annotation));
@@ -86,7 +86,7 @@ public final class AopHelper {
 	 * 一个AspectProxy实现类，管理所有Controller类，从而对Controller实现AOP功能 问题：多个AspectProxy实现类
 	 * 作用相同controller怎么解决？
 	 */
-	private static void addAspectProxy(Map<Class<?>, Set<Class<?>>> proxyMap) throws Exception {
+	private static void addAspectProxy(Map<Class<?>, Set<Class<?>>> proxyMap) {
 		Set<Class<?>> proxyClassSet = ClassHelper.getClassSetBySuper(AspectProxy.class);// 获取所有AspectProxy实现类class
 		for (Class<?> proxyClass : proxyClassSet) {
 			if (proxyClass.isAnnotationPresent(Aspect.class)) {

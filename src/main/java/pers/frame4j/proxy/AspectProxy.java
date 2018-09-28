@@ -4,16 +4,14 @@ import java.lang.reflect.Method;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * aspect proxy
- */
 public abstract class AspectProxy implements Proxy {
 
     private static final Logger logger = LoggerFactory.getLogger(AspectProxy.class);
 
     @Override
     public final Object doProxy(ProxyChain proxyChain) throws Throwable {
-        Object result = null;
+
+        Object result;
 
         Class<?> cls = proxyChain.getTargetClass();
         Method method = proxyChain.getTargetMethod();

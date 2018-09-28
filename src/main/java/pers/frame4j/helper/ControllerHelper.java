@@ -16,7 +16,7 @@ import pers.frame4j.util.CollectionUtil;
  */
 public final class ControllerHelper {
 
-    private static final Map<Request, Handler> ACTION_MAP = new HashMap<Request, Handler>();
+    private static final Map<Request, Handler> ACTION_MAP = new HashMap<>();
 
     static {
         Set<Class<?>> controllerClassSet = ClassHelper.getControllerClassSet();

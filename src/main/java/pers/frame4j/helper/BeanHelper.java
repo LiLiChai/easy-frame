@@ -11,7 +11,7 @@ import pers.frame4j.util.ReflectionUtil;
  */
 public final class BeanHelper {
 
-    private static final Map<Class<?>, Object> BEAN_MAP = new HashMap<Class<?>, Object>();
+    private static final Map<Class<?>, Object> BEAN_MAP = new HashMap<>();
 
     static {
         Set<Class<?>> beanClassSet = ClassHelper.getBeanClassSet();

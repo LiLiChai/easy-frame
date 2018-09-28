@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import net.sf.cglib.proxy.MethodProxy;
 
-/**
- * 
- */
+
 public class ProxyChain {
 
     private final Class<?> targetClass;
@@ -16,7 +14,7 @@ public class ProxyChain {
     private final MethodProxy methodProxy;
     private final Object[] methodParams;
 
-    private List<Proxy> proxyList = new ArrayList<Proxy>();
+    private List<Proxy> proxyList;
     private int proxyIndex = 0;
 
     public ProxyChain(Class<?> targetClass, Object targetObject, Method targetMethod, MethodProxy methodProxy, Object[] methodParams, List<Proxy> proxyList) {

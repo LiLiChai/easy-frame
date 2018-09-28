@@ -24,6 +24,7 @@ public class CustomerController {
 
     @Inject
     private CustomerService customerService;
+
     @Action("get:/customer")
     public Data index(Param param) {
         List<Customer> customerList = customerService.getCustomerList();

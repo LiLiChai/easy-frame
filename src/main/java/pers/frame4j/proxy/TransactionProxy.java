@@ -6,19 +6,11 @@ import org.slf4j.LoggerFactory;
 import pers.frame4j.annotation.Transaction;
 import pers.frame4j.helper.DatabaseHelper;
 
-/**
- * transaction proxy
- */
 public class TransactionProxy implements Proxy {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TransactionProxy.class);
 
-    private static final ThreadLocal<Boolean> FLAG_HOLDER = new ThreadLocal<Boolean>() {
-        @Override
-        protected Boolean initialValue() {
-            return false;
-        }
-    };
+    private static final ThreadLocal<Boolean> FLAG_HOLDER = ThreadLocal.withInitial(() -> false);
 
     @Override
     public Object doProxy(ProxyChain proxyChain) throws Throwable {
