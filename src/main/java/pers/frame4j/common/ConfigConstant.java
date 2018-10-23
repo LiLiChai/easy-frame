@@ -1,7 +1,8 @@
 package pers.frame4j.common;
 
 /**
- * provide config constant
+ * @author FancyLi
+ * @time 2018-09-28
  */
 public interface ConfigConstant {
 

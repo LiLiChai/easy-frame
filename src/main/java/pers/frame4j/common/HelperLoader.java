@@ -8,7 +8,8 @@ import pers.frame4j.helper.IocHelper;
 import pers.frame4j.util.ClassUtil;
 
 /**
- * load relative helper
+ * @author FancyLi
+ * @time 2018-09-28
  */
 public final class HelperLoader {
 
