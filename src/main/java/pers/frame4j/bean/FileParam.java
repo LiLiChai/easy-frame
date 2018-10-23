@@ -4,6 +4,7 @@ import java.io.InputStream;
 
 /**
  * file uploat encapsulation
+ * @author Fancy
  */
 
 public class FileParam {

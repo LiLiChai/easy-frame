@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 
 /**
  * Action encapsulation
+ * @author Fancy
  */
 public class Handler {
 

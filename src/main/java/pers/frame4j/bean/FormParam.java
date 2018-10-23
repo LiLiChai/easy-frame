@@ -1,7 +1,7 @@
 package pers.frame4j.bean;
 
 /**
- * form param encupsulation
+ * @author FancyLi
  */
 public class FormParam {
 

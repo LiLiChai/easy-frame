@@ -1,7 +1,8 @@
 package pers.frame4j.bean;
 
-/*
- * json encapsulation
+/**
+ * @author Fancy
+ *
  */
 public class Data {
 

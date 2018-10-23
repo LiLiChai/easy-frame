@@ -5,6 +5,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * request information encapsulation
+ * @author Fancy
  */
 public class Request {
 

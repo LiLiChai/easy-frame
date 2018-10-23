@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * return entity
+ * @author Fancy
  */
 public class View {
 
@@ -14,7 +15,7 @@ public class View {
 
 	public View(String path) {
 		this.path = path;
-		model = new HashMap<String, Object>();
+		model = new HashMap<>();
 	}
 
 	public View addModel(String key, Object value) {

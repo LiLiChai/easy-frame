@@ -9,7 +9,7 @@ import pers.frame4j.util.CollectionUtil;
 import pers.frame4j.util.StringUtil;
 
 /**
- * request param object
+ * @author FancyLi
  */
 public class Param {
 
@@ -30,7 +30,7 @@ public class Param {
      * get request param mapper
      */
     public Map<String, Object> getFieldMap() {
-        Map<String, Object> fieldMap = new HashMap<String, Object>();
+        Map<String, Object> fieldMap = new HashMap<>();
         if (CollectionUtil.isNotEmpty(formParamList)) {
             for (FormParam formParam : formParamList) {
                 String fieldName = formParam.getFieldName();
@@ -48,7 +48,7 @@ public class Param {
      * get file upload mapper
      */
     public Map<String, List<FileParam>> getFileMap() {
-        Map<String, List<FileParam>> fileMap = new HashMap<String, List<FileParam>>();
+        Map<String, List<FileParam>> fileMap = new HashMap<>();
         if (CollectionUtil.isNotEmpty(fileParamList)) {
             for (FileParam fileParam : fileParamList) {
                 String fieldName = fileParam.getFieldName();
@@ -56,7 +56,7 @@ public class Param {
                 if (fileMap.containsKey(fieldName)) {
                     fileParamList = fileMap.get(fieldName);
                 } else {
-                    fileParamList = new ArrayList<FileParam>();
+                    fileParamList = new ArrayList<>();
                 }
                 fileParamList.add(fileParam);
                 fileMap.put(fieldName, fileParamList);
