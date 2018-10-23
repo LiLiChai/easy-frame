@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import pers.frame4j.annotation.Transaction;
 import pers.frame4j.helper.DatabaseHelper;
 
+/**
+ * @author Fancy
+ */
 public class TransactionProxy implements Proxy {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TransactionProxy.class);

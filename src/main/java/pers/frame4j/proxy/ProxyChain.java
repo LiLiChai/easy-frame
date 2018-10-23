@@ -1,11 +1,13 @@
 package pers.frame4j.proxy;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
 import net.sf.cglib.proxy.MethodProxy;
 
 
+/**
+ * @author Fancy
+ */
 public class ProxyChain {
 
     private final Class<?> targetClass;
