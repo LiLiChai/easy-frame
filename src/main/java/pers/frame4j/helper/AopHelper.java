@@ -18,6 +18,7 @@ import pers.frame4j.proxy.TransactionProxy;
 
 /**
  * method intercept 动态代理
+ * @author Fancy
  */
 public final class AopHelper {
 
@@ -30,7 +31,8 @@ public final class AopHelper {
 			for (Map.Entry<Class<?>, List<Proxy>> targetEntry : targetMap.entrySet()) {
 				Class<?> targetClass = targetEntry.getKey();
 				List<Proxy> proxyList = targetEntry.getValue();
-				Object proxy = ProxyManager.createProxy(targetClass, proxyList);// 拆分成类 代理类一一对应，AOP类已去掉
+				// 拆分成类 代理类一一对应，AOP类已去掉
+				Object proxy = ProxyManager.createProxy(targetClass, proxyList);
 				BeanHelper.setBean(targetClass, proxy);
 			}
 		} catch (Exception e) {
@@ -38,18 +40,23 @@ public final class AopHelper {
 		}
 	}
 
-	/*
+	/**
 	 * Map左边代理类.class 右边带注解类.class
+	 * @return
+	 * @throws Exception
 	 */
 	private static Map<Class<?>, Set<Class<?>>> createProxyMap() throws Exception {
-		Map<Class<?>, Set<Class<?>>> proxyMap = new HashMap<Class<?>, Set<Class<?>>>();
+		Map<Class<?>, Set<Class<?>>> proxyMap = new HashMap<>(0);
 		addAspectProxy(proxyMap);
 		addTransactionProxy(proxyMap);
 		return proxyMap;
 	}
 
-	/*
+
+	/**
 	 * 获取所有Controller.class
+	 * @param aspect
+	 * @return
 	 */
 	private static Set<Class<?>> createTargetClassSet(Aspect aspect) {
 		Set<Class<?>> targetClassSet = new HashSet<>();
@@ -60,11 +67,15 @@ public final class AopHelper {
 		return targetClassSet;
 	}
 
-	/*
+
+	/**
 	 * Map中放入带注解的类 List放入类的代理类
+	 * @param proxyMap
+	 * @return
+	 * @throws Exception
 	 */
 	private static Map<Class<?>, List<Proxy>> createTargetMap(Map<Class<?>, Set<Class<?>>> proxyMap) throws Exception {
-		Map<Class<?>, List<Proxy>> targetMap = new HashMap<Class<?>, List<Proxy>>();
+		Map<Class<?>, List<Proxy>> targetMap = new HashMap<>(0);
 		for (Map.Entry<Class<?>, Set<Class<?>>> proxyEntry : proxyMap.entrySet()) {
 			Class<?> proxyClass = proxyEntry.getKey();
 			Set<Class<?>> targetClassSet = proxyEntry.getValue();
@@ -73,7 +84,7 @@ public final class AopHelper {
 				if (targetMap.containsKey(targetClass)) {
 					targetMap.get(targetClass).add(proxy);
 				} else {
-					List<Proxy> proxyList = new ArrayList<Proxy>();
+					List<Proxy> proxyList = new ArrayList<>();
 					proxyList.add(proxy);
 					targetMap.put(targetClass, proxyList);
 				}
@@ -82,26 +93,30 @@ public final class AopHelper {
 		return targetMap;
 	}
 
-	/*
-	 * 一个AspectProxy实现类，管理所有Controller类，从而对Controller实现AOP功能 问题：多个AspectProxy实现类
-	 * 作用相同controller怎么解决？
+
+	/**
+	 * 一个AspectProxy实现类，管理所有Controller类，从而对Controller实现AOP功能
+	 * 问题：多个AspectProxy实现,类作用相同controller怎么解决？
+	 * @param proxyMap
 	 */
 	private static void addAspectProxy(Map<Class<?>, Set<Class<?>>> proxyMap) {
-		Set<Class<?>> proxyClassSet = ClassHelper.getClassSetBySuper(AspectProxy.class);// 获取所有AspectProxy实现类class
+		Set<Class<?>> proxyClassSet = ClassHelper.getClassSetBySuper(AspectProxy.class);
 		for (Class<?> proxyClass : proxyClassSet) {
 			if (proxyClass.isAnnotationPresent(Aspect.class)) {
 				Aspect aspect = proxyClass.getAnnotation(Aspect.class);
-				Set<Class<?>> targetClassSet = createTargetClassSet(aspect);// 获取所有Controller class
+				Set<Class<?>> targetClassSet = createTargetClassSet(aspect);
 				proxyMap.put(proxyClass, targetClassSet);
 			}
 		}
 	}
 
-	/*
+
+	/**
 	 * Set中放入所有带@Service的类
+	 * @param proxyMap
 	 */
 	private static void addTransactionProxy(Map<Class<?>, Set<Class<?>>> proxyMap) {
-		Set<Class<?>> serviceClassSet = ClassHelper.getClassSetByAnnotation(Service.class);// 获取所有带@Service注解的类
+		Set<Class<?>> serviceClassSet = ClassHelper.getClassSetByAnnotation(Service.class);
 		proxyMap.put(TransactionProxy.class, serviceClassSet);
 	}
 

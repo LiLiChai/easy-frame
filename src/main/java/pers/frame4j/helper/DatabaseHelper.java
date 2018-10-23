@@ -28,7 +28,7 @@ import pers.frame4j.util.ClassUtil;
 import pers.frame4j.util.CollectionUtil;
 
 /**
- * database helper
+ * @author Fancy
  */
 public final class DatabaseHelper {
 
@@ -41,7 +41,7 @@ public final class DatabaseHelper {
     private static final BasicDataSource DATA_SOURCE;
 
     static {
-        CONNECTION_HOLDER = new ThreadLocal<Connection>();
+        CONNECTION_HOLDER = new ThreadLocal<>();
 
         QUERY_RUNNER = new QueryRunner();
 
@@ -137,7 +137,7 @@ public final class DatabaseHelper {
         T entity;
         try {
             Connection conn = getConnection();
-            entity = QUERY_RUNNER.query(conn, sql, new BeanHandler<T>(entityClass), params);
+            entity = QUERY_RUNNER.query(conn, sql, new BeanHandler<>(entityClass), params);
         } catch (SQLException e) {
             LOGGER.error("query entity failure", e);
             throw new RuntimeException(e);
@@ -152,7 +152,7 @@ public final class DatabaseHelper {
         List<T> entityList;
         try {
             Connection conn = getConnection();
-            entityList = QUERY_RUNNER.query(conn, sql, new BeanListHandler<T>(entityClass), params);
+            entityList = QUERY_RUNNER.query(conn, sql, new BeanListHandler<>(entityClass), params);
         } catch (SQLException e) {
             LOGGER.error("query entity list failure", e);
             throw new RuntimeException(e);
@@ -167,7 +167,7 @@ public final class DatabaseHelper {
         T obj;
         try {
             Connection conn = getConnection();
-            obj = QUERY_RUNNER.query(conn, sql, new ScalarHandler<T>(), params);
+            obj = QUERY_RUNNER.query(conn, sql, new ScalarHandler<>(), params);
         } catch (SQLException e) {
             LOGGER.error("query failure", e);
             throw new RuntimeException(e);
@@ -182,7 +182,7 @@ public final class DatabaseHelper {
         List<T> list;
         try {
             Connection conn = getConnection();
-            list = QUERY_RUNNER.query(conn, sql, new ColumnListHandler<T>(), params);
+            list = QUERY_RUNNER.query(conn, sql, new ColumnListHandler<>(), params);
         } catch (SQLException e) {
             LOGGER.error("query list failure", e);
             throw new RuntimeException(e);

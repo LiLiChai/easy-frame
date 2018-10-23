@@ -8,6 +8,7 @@ import pers.frame4j.util.ReflectionUtil;
 /**
  * Bean helper
  *
+ * @author Fancy
  */
 public final class BeanHelper {
 

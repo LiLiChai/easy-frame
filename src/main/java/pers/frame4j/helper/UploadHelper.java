@@ -28,6 +28,7 @@ import pers.frame4j.util.StringUtil;
 
 /**
  * upload file helper
+ * @author Fancy
  */
 public final class UploadHelper {
 
@@ -58,8 +59,8 @@ public final class UploadHelper {
      * 创建请求对象
      */
     public static Param createParam(HttpServletRequest request) throws IOException {
-        List<FormParam> formParamList = new ArrayList<FormParam>();
-        List<FileParam> fileParamList = new ArrayList<FileParam>();
+        List<FormParam> formParamList = new ArrayList<>();
+        List<FileParam> fileParamList = new ArrayList<>();
         try {
             Map<String, List<FileItem>> fileItemListMap = servletFileUpload.parseParameterMap(request);
             if (CollectionUtil.isNotEmpty(fileItemListMap)) {

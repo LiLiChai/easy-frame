@@ -11,12 +11,13 @@ import org.slf4j.LoggerFactory;
 /**
  * Servlet helper
  *
+ * @author Fancy
  */
 public final class ServletHelper {
  
     private static final Logger LOGGER = LoggerFactory.getLogger(ServletHelper.class);
 
-    private static final ThreadLocal<ServletHelper> SERVLET_HELPER_HOLDER = new ThreadLocal<ServletHelper>();
+    private static final ThreadLocal<ServletHelper> SERVLET_HELPER_HOLDER = new ThreadLocal<>();
 
     private HttpServletRequest request;
     private HttpServletResponse response;

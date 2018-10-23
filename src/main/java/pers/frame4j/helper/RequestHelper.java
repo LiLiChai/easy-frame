@@ -14,6 +14,7 @@ import pers.frame4j.util.StringUtil;
 
 /**
  * request helper
+ * @author Fancy
  */
 public final class RequestHelper {
 
@@ -21,14 +22,14 @@ public final class RequestHelper {
      * 创建请求对象
      */
     public static Param createParam(HttpServletRequest request) throws IOException {
-        List<FormParam> formParamList = new ArrayList<FormParam>();
+        List<FormParam> formParamList = new ArrayList<>();
         formParamList.addAll(parseParameterNames(request));
         formParamList.addAll(parseInputStream(request));
         return new Param(formParamList);
     }
 
     private static List<FormParam> parseParameterNames(HttpServletRequest request) {
-        List<FormParam> formParamList = new ArrayList<FormParam>();
+        List<FormParam> formParamList = new ArrayList<>();
         Enumeration<String> paramNames = request.getParameterNames();
         while (paramNames.hasMoreElements()) {
             String fieldName = paramNames.nextElement();
@@ -38,7 +39,7 @@ public final class RequestHelper {
                 if (fieldValues.length == 1) {
                     fieldValue = fieldValues[0];
                 } else {
-                    StringBuilder sb = new StringBuilder("");
+                    StringBuilder sb = new StringBuilder();
                     for (int i = 0; i < fieldValues.length; i++) {
                         sb.append(fieldValues[i]);
                         if (i != fieldValues.length - 1) {
@@ -54,7 +55,7 @@ public final class RequestHelper {
     }
 
     private static List<FormParam> parseInputStream(HttpServletRequest request) throws IOException {
-        List<FormParam> formParamList = new ArrayList<FormParam>();
+        List<FormParam> formParamList = new ArrayList<>();
         String body = CodecUtil.decodeURL(StreamUtil.getString(request.getInputStream()));
         if (StringUtil.isNotEmpty(body)) {
             String[] kvs = StringUtil.splitString(body, "&");

@@ -8,6 +8,7 @@ import pers.frame4j.util.PropertiesUtil;
 /**
  * config helper
  *
+ * @author Fancy
  */
 public final class ConfigHelper {
 

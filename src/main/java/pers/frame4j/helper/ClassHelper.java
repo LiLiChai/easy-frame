@@ -9,6 +9,7 @@ import pers.frame4j.util.ClassUtil;
 
 /**
  * class helper
+ * @author Fancy
  */
 public final class ClassHelper {
 
@@ -33,7 +34,7 @@ public final class ClassHelper {
      * 获取应用包名下所有 Service 类
      */
     public static Set<Class<?>> getServiceClassSet() {
-        Set<Class<?>> classSet = new HashSet<Class<?>>();
+        Set<Class<?>> classSet = new HashSet<>();
         for (Class<?> cls : CLASS_SET) {
             if (cls.isAnnotationPresent(Service.class)) {
                 classSet.add(cls);
@@ -46,7 +47,7 @@ public final class ClassHelper {
      * 获取应用包名下所有 Controller 类
      */
     public static Set<Class<?>> getControllerClassSet() {
-        Set<Class<?>> classSet = new HashSet<Class<?>>();
+        Set<Class<?>> classSet = new HashSet<>();
         for (Class<?> cls : CLASS_SET) {
             if (cls.isAnnotationPresent(Controller.class)) {
                 classSet.add(cls);
@@ -59,7 +60,7 @@ public final class ClassHelper {
      * 获取应用包名下所有 Bean 类（包括：Service、Controller 等）
      */
     public static Set<Class<?>> getBeanClassSet() {
-        Set<Class<?>> beanClassSet = new HashSet<Class<?>>();
+        Set<Class<?>> beanClassSet = new HashSet<>();
         beanClassSet.addAll(getServiceClassSet());
         beanClassSet.addAll(getControllerClassSet());
         return beanClassSet;
@@ -69,7 +70,7 @@ public final class ClassHelper {
      * 获取应用包名下某父类（或接口）的所有子类（或实现类）
      */
     public static Set<Class<?>> getClassSetBySuper(Class<?> superClass) {
-        Set<Class<?>> classSet = new HashSet<Class<?>>();
+        Set<Class<?>> classSet = new HashSet<>();
         for (Class<?> cls : CLASS_SET) {
             if (superClass.isAssignableFrom(cls) && !superClass.equals(cls)) {
                 classSet.add(cls);
@@ -82,7 +83,7 @@ public final class ClassHelper {
      * 获取应用包名下带有某注解的所有类
      */
     public static Set<Class<?>> getClassSetByAnnotation(Class<? extends Annotation> annotationClass) {
-        Set<Class<?>> classSet = new HashSet<Class<?>>();
+        Set<Class<?>> classSet = new HashSet<>();
         for (Class<?> cls : CLASS_SET) {
             if (cls.isAnnotationPresent(annotationClass)) {
                 classSet.add(cls);
