@@ -6,6 +6,9 @@ import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Fancy
+ */
 public final class FileUtil {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(FileUtil.class);

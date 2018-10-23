@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 编码与解码操作工具类
+ * @author Fancy
  */
 public final class CodecUtil {
 

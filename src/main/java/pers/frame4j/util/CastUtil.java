@@ -2,6 +2,7 @@ package pers.frame4j.util;
 
 /**
  * type changing
+ * @author Fancy
  */
 public final class CastUtil {
 

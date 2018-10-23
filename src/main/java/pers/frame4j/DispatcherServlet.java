@@ -28,7 +28,7 @@ import pers.frame4j.util.ReflectionUtil;
 import pers.frame4j.util.StringUtil;
 
 /**
- * author : lh 2018-06-11 NT
+ * @author Fancy
  */
 @WebServlet(urlPatterns = "/*", loadOnStartup = 0)
 public class DispatcherServlet extends HttpServlet {

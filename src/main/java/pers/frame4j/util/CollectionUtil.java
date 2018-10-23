@@ -5,6 +5,9 @@ import java.util.Map;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 
+/**
+ * @author Fancy
+ */
 public final class CollectionUtil {
 
 	public static boolean isEmpty(Collection<?> collection) {

@@ -2,6 +2,9 @@ package pers.frame4j.util;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * @author Fancy
+ */
 public final class StringUtil {
 
 	/**

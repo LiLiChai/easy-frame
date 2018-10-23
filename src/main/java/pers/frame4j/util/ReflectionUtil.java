@@ -5,6 +5,9 @@ import java.lang.reflect.Method;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Fancy
+ */
 public final class ReflectionUtil {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReflectionUtil.class);

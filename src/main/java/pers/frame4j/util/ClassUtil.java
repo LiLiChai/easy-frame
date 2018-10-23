@@ -12,6 +12,9 @@ import java.util.jar.JarFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Fancy
+ */
 public final class ClassUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ClassUtil.class);
@@ -47,7 +50,8 @@ public final class ClassUtil {
                 if (url != null) {
                     String protocol = url.getProtocol();
                     if (protocol.equals("file")) {
-                        String packagePath = url.getPath().replaceAll("%20", " ");//空格序列化后就是%20
+                        //空格序列化后就是%20
+                        String packagePath = url.getPath().replaceAll("%20", " ");
                         addClass(classSet, packagePath, packageName);
                     } else if (protocol.equals("jar")) {
                         JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();
@@ -76,11 +80,8 @@ public final class ClassUtil {
     }
 
     private static void addClass(Set<Class<?>> classSet, String packagePath, String packageName) {
-        File[] files = new File(packagePath).listFiles(new FileFilter() {
-            public boolean accept(File file) {
-                return (file.isFile() && file.getName().endsWith(".class")) || file.isDirectory();
-            }
-        });
+        File[] files = new File(packagePath).listFiles(file -> (file.isFile()
+                && file.getName().endsWith(".class")) || file.isDirectory());
         for (File file : files) {
             String fileName = file.getName();
             if (file.isFile()) {

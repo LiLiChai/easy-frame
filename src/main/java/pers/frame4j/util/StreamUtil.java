@@ -7,6 +7,9 @@ import java.io.OutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Fancy
+ */
 public final class StreamUtil {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(StreamUtil.class);

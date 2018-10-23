@@ -4,6 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Fancy
+ */
 public final class JsonUtil {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(JsonUtil.class);
