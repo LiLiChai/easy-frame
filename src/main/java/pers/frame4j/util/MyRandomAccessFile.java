@@ -76,6 +76,7 @@ public class MyRandomAccessFile {
 		}
 	}
 
+
 	public static void main(String[] args) {
 		List<File> list = getFileList("d:/src");
 		for (File file : list) {

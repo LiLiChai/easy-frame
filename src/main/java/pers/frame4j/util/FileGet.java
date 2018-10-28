@@ -21,6 +21,7 @@ public class FileGet {
 					fileNum++;
 				}
 			}
+
 			File temp_file;
 			while (!list.isEmpty()) {
 				temp_file = list.removeFirst();
