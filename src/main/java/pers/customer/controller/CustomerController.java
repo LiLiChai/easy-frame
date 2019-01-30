@@ -18,6 +18,7 @@ import pers.frame4j.bean.View;
 
 /**
  * 处理客户管理相关请求
+ * @author fancy
  */
 @Controller
 public class CustomerController {
@@ -35,7 +36,7 @@ public class CustomerController {
     public View show(Param param) {
         long id = param.getLong("id");
         Customer customer = customerService.getCustomer(id);
-        return new View("customer_show.jsp").addModel("customer", customer);
+        return new View("view/customer_show.jsp").addModel("customer", customer);
     }
     
     @Action("get:/customer_show2")

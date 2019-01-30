@@ -53,7 +53,7 @@ public final class ConfigHelper {
 	 * 获取应用 JSP 路径
 	 */
 	public static String getAppJspPath() {
-		return PropertiesUtil.getString(CONFIG_PROPS, ConfigConstant.APP_JSP_PATH, "/WEB-INF/zhy/");
+		return PropertiesUtil.getString(CONFIG_PROPS, ConfigConstant.APP_JSP_PATH, "/WEB-INF/");
 	}
 
 	/**

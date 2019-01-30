@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
- * @author lihuan
+ * @author fancy
  */
 @FieldTypeAnnotation(type = "class", hobby = {"smoke"})
 public class ReflectAnnotation {
