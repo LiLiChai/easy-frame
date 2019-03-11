@@ -25,7 +25,7 @@ public final class ClassHelper {
     }
 
     /**
-     * 获取应用包名下的所有类
+     * 获取应用包名下的所有Class对象
      */
     public static Set<Class<?>> getClassSet() {
         return CLASS_SET;

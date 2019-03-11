@@ -22,7 +22,7 @@ import pers.fancy.frame4j.proxy.ProxyManager;
  */
 public final class AopHelper {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(AopHelper.class);
+	private static final Logger log = LoggerFactory.getLogger(AopHelper.class);
 
 	static {
 		try {
@@ -36,7 +36,7 @@ public final class AopHelper {
 				BeanHelper.setBean(targetClass, proxy);
 			}
 		} catch (Exception e) {
-			LOGGER.error("aop failure", e);
+			log.error("aop failure", e);
 		}
 	}
 

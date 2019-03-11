@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ReflectionUtil {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ReflectionUtil.class);
+	private static final Logger log = LoggerFactory.getLogger(ReflectionUtil.class);
 
 	@SuppressWarnings("deprecation")
 	public static Object newInstance(Class<?> cls) {
@@ -18,7 +18,7 @@ public final class ReflectionUtil {
 		try {
 			instance = cls.newInstance();
 		} catch (Exception e) {
-			LOGGER.error("new instance failure", e);
+			log.error("new instance failure", e);
 			throw new RuntimeException(e);
 		}
 		return instance;
@@ -32,10 +32,10 @@ public final class ReflectionUtil {
 	public static Object invokeMethod(Object obj, Method method, Object... args) {
 		Object result;
 		try {
-			method.setAccessible(true);//对private变量的获取
+			method.setAccessible(true);
 			result = method.invoke(obj, args);
 		} catch (Exception e) {
-			LOGGER.error("invoke method failure", e);
+			log.error("invoke method failure", e);
 			throw new RuntimeException(e);
 		}
 		return result;
@@ -49,7 +49,7 @@ public final class ReflectionUtil {
 			field.setAccessible(true);
 			field.set(obj, value);
 		} catch (Exception e) {
-			LOGGER.error("set field failure", e);
+			log.error("set field failure", e);
 			throw new RuntimeException(e);
 		}
 	}

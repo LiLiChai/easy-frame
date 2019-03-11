@@ -1,5 +1,8 @@
 package pers.fancy.frame4j.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,9 +10,14 @@ import java.io.RandomAccessFile;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @author fancy
+ */
 public class MyRandomAccessFile {
 
-	public static List<File> filelist = new LinkedList<File>();
+	private static final Logger log = LoggerFactory.getLogger(MyRandomAccessFile.class);
+
+	public static List<File> filelist = new LinkedList<>();
 
 	public static List<File> getFileList(String strPath) {
 
@@ -64,9 +72,9 @@ public class MyRandomAccessFile {
 				}
 			}
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			log.error(e.toString());
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e.toString());
 		} finally {
 			try {
 				raf.close();

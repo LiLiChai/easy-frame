@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class PropertiesUtil {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(PropertiesUtil.class);
+	private static final Logger log = LoggerFactory.getLogger(PropertiesUtil.class);
 
 	public static Properties loadProps(String fileName) {
 		Properties props = null;
@@ -25,13 +25,13 @@ public final class PropertiesUtil {
 			props = new Properties();
 			props.load(is);
 		} catch (IOException e) {
-			LOGGER.error("load properties file failure", e);
+			log.error("load properties file failure", e);
 		} finally {
 			if (is != null) {
 				try {
 					is.close();
 				} catch (IOException e) {
-					LOGGER.error("close input stream failure", e);
+					log.error("close input stream failure", e);
 				}
 			}
 		}

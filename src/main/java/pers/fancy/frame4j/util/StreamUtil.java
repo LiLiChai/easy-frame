@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class StreamUtil {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(StreamUtil.class);
+	private static final Logger log = LoggerFactory.getLogger(StreamUtil.class);
 
 	/**
 	 * 从输入流中获取字符串
@@ -26,7 +26,7 @@ public final class StreamUtil {
 				sb.append(line);
 			}
 		} catch (Exception e) {
-			LOGGER.error("get string failure", e);
+			log.error("get string failure", e);
 			throw new RuntimeException(e);
 		}
 		return sb.toString();
@@ -44,14 +44,14 @@ public final class StreamUtil {
 			}
 			outputStream.flush();
 		} catch (Exception e) {
-			LOGGER.error("copy stream failure", e);
+			log.error("copy stream failure", e);
 			throw new RuntimeException(e);
 		} finally {
 			try {
 				inputStream.close();
 				outputStream.close();
 			} catch (Exception e) {
-				LOGGER.error("close stream failure", e);
+				log.error("close stream failure", e);
 			}
 		}
 	}
