@@ -8,7 +8,7 @@ import pers.fancy.frame4j.helper.BeanHelper;
 import pers.fancy.frame4j.helper.ClassHelper;
 
 /**
- * @author FancyLi
+ * @author fancy
  * @time 2018-09-28
  */
 public final class HelperLoader {
