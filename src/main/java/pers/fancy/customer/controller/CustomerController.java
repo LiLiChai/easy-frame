@@ -41,41 +41,21 @@ public class CustomerController {
     	Customer customer = customerService.getCustomer(id);
     	return new Data(customer);
     }
-    
-    @Action("post:/test")
-    public View test(Param param) {
-    	System.out.println("hello test2222");
-    	return new View ("test.html");
-    }
-    
+
     @Action("get:/test2")
     public View test2(Param param) {
     	System.out.println("hello test2222222222222222");
     	return new View ("index.html");
     }
-    
-    @Action("put:/test3")
-    public View test3(Param param) {
-    	System.out.println("hello test3");
-    	return new View("test.html");
-    }
 
     @Action("get:/customer_create")
-    public View create(Param param) {
-        return new View("customer_create.jsp");
-    }
-
-
-    @Action("post:/customer_create")
-    public Data createSubmit(Param param) {
+    public Data createSubmit(Param param) throws Exception {
         Map<String, Object> fieldMap = param.getFieldMap();
         boolean result = customerService.createCustomer(fieldMap);
         return new Data(result);
     }
 
-    /**
-     * 进入 编辑客户 界面
-     */
+
     @Action("get:/customer_edit")
     public View edit(Param param) {
         long id = param.getLong("id");
@@ -99,4 +79,5 @@ public class CustomerController {
         boolean result = customerService.deleteCustomer(id);
         return new Data(result);
     }
+
 }

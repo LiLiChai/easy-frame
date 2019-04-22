@@ -2,11 +2,11 @@ package pers.fancy.frame4j.bean;
 
 import java.io.InputStream;
 
-/**
- * file uploat encapsulation
- * @author Fancy
- */
 
+/**
+ * 文件上传参数封装
+ * @author lihuan
+ */
 public class FileParam {
 
     private String fieldName;
@@ -42,4 +42,5 @@ public class FileParam {
     public InputStream getInputStream() {
         return inputStream;
     }
+
 }

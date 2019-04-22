@@ -44,7 +44,11 @@ public abstract class AspectProxy implements Proxy {
     }
 
     public boolean intercept(Class<?> cls, Method method, Object[] params) throws Throwable {
-        return true;
+        String methods = "hashCode" + "toString";
+        if (!methods.contains(method.getName())){
+            return true;
+        }
+        return false;
     }
 
     public void before(Class<?> cls, Method method, Object[] params) throws Throwable {
