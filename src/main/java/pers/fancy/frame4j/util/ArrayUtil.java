@@ -7,6 +7,8 @@ import org.apache.commons.lang3.ArrayUtils;
  */
 public final class ArrayUtil {
 
+	private ArrayUtil(){}
+
 	public static boolean isNotEmpty(Object[] array) {
 		return !ArrayUtils.isEmpty(array);
 	}

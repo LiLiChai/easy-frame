@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,29 +42,33 @@ public final class ClassUtil {
      * 得到指定包下所有的Class 18-06-19
      */
     public static Set<Class<?>> getClassSet(String packageName) {
-        Set<Class<?>> classSet = new HashSet<Class<?>>();
+        String[] paths = packageName.split(",");
+
+        Set<Class<?>> classSet = new HashSet<>();
         try {
-            Enumeration<URL> urls = getClassLoader().getResources(packageName.replace(".", "/"));
-            while (urls.hasMoreElements()) {
-                URL url = urls.nextElement();
-                if (url != null) {
-                    String protocol = url.getProtocol();
-                    if (protocol.equals("file")) {
-                        //空格序列化后就是%20
-                        String packagePath = url.getPath().replaceAll("%20", " ");
-                        addClass(classSet, packagePath, packageName);
-                    } else if (protocol.equals("jar")) {
-                        JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();
-                        if (jarURLConnection != null) {
-                            JarFile jarFile = jarURLConnection.getJarFile();
-                            if (jarFile != null) {
-                                Enumeration<JarEntry> jarEntries = jarFile.entries();
-                                while (jarEntries.hasMoreElements()) {
-                                    JarEntry jarEntry = jarEntries.nextElement();
-                                    String jarEntryName = jarEntry.getName();
-                                    if (jarEntryName.endsWith(".class")) {
-                                        String className = jarEntryName.substring(0, jarEntryName.lastIndexOf(".")).replaceAll("/", ".");
-                                        doAddClass(classSet, className);
+            for (int i = 0; i < paths.length; i++) {
+                Enumeration<URL> urls = getClassLoader().getResources(paths[i].replace(".", "/"));
+                while (urls.hasMoreElements()) {
+                    URL url = urls.nextElement();
+                    if (url != null) {
+                        String protocol = url.getProtocol();
+                        if (protocol.equals("file")) {
+                            //空格序列化后就是%20
+                            String packagePath = url.getPath().replaceAll("%20", " ");
+                            addClass(classSet, packagePath, paths[i]);
+                        } else if (protocol.equals("jar")) {
+                            JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();
+                            if (jarURLConnection != null) {
+                                JarFile jarFile = jarURLConnection.getJarFile();
+                                if (jarFile != null) {
+                                    Enumeration<JarEntry> jarEntries = jarFile.entries();
+                                    while (jarEntries.hasMoreElements()) {
+                                        JarEntry jarEntry = jarEntries.nextElement();
+                                        String jarEntryName = jarEntry.getName();
+                                        if (jarEntryName.endsWith(".class")) {
+                                            String className = jarEntryName.substring(0, jarEntryName.lastIndexOf(".")).replaceAll("/", ".");
+                                            doAddClass(classSet, className);
+                                        }
                                     }
                                 }
                             }
@@ -71,6 +76,8 @@ public final class ClassUtil {
                     }
                 }
             }
+
+
         } catch (Exception e) {
             LOGGER.error("get class set failure", e);
             throw new RuntimeException(e);

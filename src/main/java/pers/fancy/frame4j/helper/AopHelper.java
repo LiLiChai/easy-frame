@@ -22,6 +22,8 @@ import pers.fancy.frame4j.proxy.ProxyManager;
  */
 public final class AopHelper {
 
+	private AopHelper(){}
+
 	private static final Logger log = LoggerFactory.getLogger(AopHelper.class);
 
 	static {
@@ -93,7 +95,6 @@ public final class AopHelper {
 		return targetMap;
 	}
 
-
 	/**
 	 * 一个AspectProxy实现类，管理所有Controller类，从而对Controller实现AOP功能
 	 * 问题：多个AspectProxy实现,类作用相同controller怎么解决？
@@ -109,7 +110,6 @@ public final class AopHelper {
 			}
 		}
 	}
-
 
 	/**
 	 * Set中放入所有带@Service的类

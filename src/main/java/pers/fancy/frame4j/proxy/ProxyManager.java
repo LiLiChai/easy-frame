@@ -10,6 +10,8 @@ import net.sf.cglib.proxy.MethodInterceptor;
  */
 public class ProxyManager {
 
+    private ProxyManager(){}
+
     public static <T> T createProxy(final Class<?> targetClass, final List<Proxy> proxyList) {
         return (T) Enhancer.create(targetClass, (MethodInterceptor) (targetObject, targetMethod, methodParams, methodProxy)
                 -> new ProxyChain(targetClass, targetObject, targetMethod, methodProxy, methodParams, proxyList).doProxyChain());

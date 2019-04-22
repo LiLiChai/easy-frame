@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public final class StringUtil {
 
+	private StringUtil(){}
 	/**
 	 * 字符串分隔符
 	 */
