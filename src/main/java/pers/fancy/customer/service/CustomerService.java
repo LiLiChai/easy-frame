@@ -1,12 +1,14 @@
 package pers.fancy.customer.service;
 
-import java.util.List;
-import java.util.Map;
+import java.io.UnsupportedEncodingException;
+import java.util.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import pers.fancy.customer.model.Customer;
 import pers.fancy.frame4j.annotation.Service;
+import pers.fancy.frame4j.annotation.Transaction;
 import pers.fancy.frame4j.helper.DatabaseHelper;
 
 /**
@@ -37,8 +39,26 @@ public class CustomerService {
     /**
      * 创建客户
      */
-    public boolean createCustomer(Map<String, Object> fieldMap) {
-        return DatabaseHelper.insertEntity(Customer.class, fieldMap);
+    @Transaction
+    public boolean createCustomer(Map<String, Object> fieldMap) throws Exception {
+
+        fieldMap = new HashMap<>(0);
+        fieldMap.put("id", UUID.randomUUID().toString().substring(0,8));
+        fieldMap.put("name", "NAME" + new Random().nextLong());
+
+        try {
+            fieldMap.put("contact", new String ("王自强".getBytes(), "utf-8"));
+        } catch (UnsupportedEncodingException e) {
+            logger.equals(e.toString());
+        }
+        fieldMap.put("telephone", "19983163458");
+        fieldMap.put("email", "SmartShuShu@163.com");
+        fieldMap.put("remark", 1);
+        boolean result = DatabaseHelper.insertEntity(Customer.class, fieldMap);
+        if (result){
+            throw new Exception("erro");
+        }
+        return result;
     }
 
     /**
@@ -51,6 +71,7 @@ public class CustomerService {
     /**
      * 删除客户
      */
+    @Transaction
     public boolean deleteCustomer(long id) {
         return DatabaseHelper.deleteEntity(Customer.class, id);
     }

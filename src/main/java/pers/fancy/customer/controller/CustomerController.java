@@ -13,7 +13,7 @@ import pers.fancy.frame4j.bean.Data;
 import pers.fancy.frame4j.bean.View;
 
 /**
- * 处理客户管理相关请求
+ *
  * @author fancy
  */
 @Controller
@@ -41,45 +41,21 @@ public class CustomerController {
     	Customer customer = customerService.getCustomer(id);
     	return new Data(customer);
     }
-    
-    @Action("post:/test")
-    public View test(Param param) {
-    	System.out.println("hello test2222");
-    	return new View ("test.html");
-    }
-    
+
     @Action("get:/test2")
     public View test2(Param param) {
     	System.out.println("hello test2222222222222222");
     	return new View ("index.html");
     }
-    
-    @Action("put:/test3")
-    public View test3(Param param) {
-    	System.out.println("hello test3");
-    	return new View("test.html");
-    }
-    /**
-     * 进入 创建客户 界面
-     */
-    @Action("get:/customer_create")
-    public View create(Param param) {
-        return new View("customer_create.jsp");
-    }
 
-    /**
-     * 处理 创建客户 请求
-     */
-    @Action("post:/customer_create")
-    public Data createSubmit(Param param) {
+    @Action("get:/customer_create")
+    public Data createSubmit(Param param) throws Exception {
         Map<String, Object> fieldMap = param.getFieldMap();
         boolean result = customerService.createCustomer(fieldMap);
         return new Data(result);
     }
 
-    /**
-     * 进入 编辑客户 界面
-     */
+
     @Action("get:/customer_edit")
     public View edit(Param param) {
         long id = param.getLong("id");
@@ -87,9 +63,7 @@ public class CustomerController {
         return new View("customer_edit.jsp").addModel("customer", customer);
     }
 
-    /**
-     * 处理 编辑客户 请求
-     */
+
     @Action("put:/customer_edit")
     public Data editSubmit(Param param) {
         long id = param.getLong("id");
@@ -98,13 +72,12 @@ public class CustomerController {
         return new Data(result);
     }
 
-    /**
-     * 处理 删除客户 请求
-     */
+
     @Action("delete:/customer_edit")
     public Data delete(Param param) {
         long id = param.getLong("id");
         boolean result = customerService.deleteCustomer(id);
         return new Data(result);
     }
+
 }

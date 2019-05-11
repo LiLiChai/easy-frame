@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
  */
 public final class PropertiesUtil {
 
+	private PropertiesUtil() {}
+
 	private static final Logger log = LoggerFactory.getLogger(PropertiesUtil.class);
 
 	public static Properties loadProps(String fileName) {

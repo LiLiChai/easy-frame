@@ -6,6 +6,8 @@ package pers.fancy.frame4j.util;
  */
 public final class CastUtil {
 
+	private CastUtil(){}
+
 	public static String castString(Object obj) {
 		return CastUtil.castString(obj, "");
 	}

@@ -14,6 +14,8 @@ import pers.fancy.frame4j.util.CollectionUtil;
  */
 public final class IocHelper {
 
+    private IocHelper(){}
+
     static {
         Map<Class<?>, Object> beanMap = BeanHelper.getBeanMap();
         if (CollectionUtil.isNotEmpty(beanMap)) {

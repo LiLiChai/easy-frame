@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
  */
 public final class JsonUtil {
 
+    private JsonUtil(){}
+
     private static final Logger log = LoggerFactory.getLogger(JsonUtil.class);
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();

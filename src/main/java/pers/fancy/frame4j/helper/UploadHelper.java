@@ -32,6 +32,8 @@ import pers.fancy.frame4j.util.StringUtil;
  */
 public final class UploadHelper {
 
+    private UploadHelper(){}
+
     private static final Logger LOGGER = LoggerFactory.getLogger(UploadHelper.class);
 
     private static ServletFileUpload servletFileUpload;
